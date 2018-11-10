@@ -9,8 +9,7 @@ export default class App extends React.Component {
       display: 0,
       currentNumber: '',
       operator: '',
-      storedResult: 0,
-      result: 0
+      storedResult: 0
     }
 
     this.handleInputChange1 = this.handleInputChange.bind(this, 'input1')
@@ -19,6 +18,7 @@ export default class App extends React.Component {
     this.handleSubButton = this.handleSubButton.bind(this)
     this.handleMultiplyButton = this.handleMultiplyButton.bind(this)
     this.handleEqualsButton = this.handleEqualsButton.bind(this)
+    this.handleClearButton = this.handleClearButton.bind(this)
   }
 
   sum (a = 0, b = 0) {
@@ -201,6 +201,8 @@ export default class App extends React.Component {
       result = this.substract(b,a)
     } else if (operator === '*') {
       result = this.multiply(a,b)
+    } else {
+      return
     }
 
     if ((result + '').length > 9 || result < 0) {
@@ -218,6 +220,15 @@ export default class App extends React.Component {
       storedResult: result,
       currentNumber: '',
       operator: ''
+    })
+  }
+
+  handleClearButton(event) {
+    this.setState({
+      display: 0,
+      currentNumber: '',
+      operator: '',
+      storedResult: 0
     })
   }
 
@@ -259,7 +270,7 @@ export default class App extends React.Component {
             <button onClick={() => {this.handleNumber(7)}}>7</button>
             <button onClick={() => {this.handleNumber(8)}}>8</button>
             <button onClick={() => {this.handleNumber(9)}}>9</button>
-            <button onClick={this.handleEqualsButton} id='clear_btn'>C</button>
+            <button onClick={this.handleClearButton} id='clear_btn'>C</button>
             <button onClick={() => {this.handleNumber(0)}}>0</button>
             <button onClick={this.handleEqualsButton} id='equal_btn'>=</button>
           </div>
