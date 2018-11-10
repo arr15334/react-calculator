@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+body {
+    background: #e9d1af;
+}
+
+div {
+    .calculator {
+        /* press-start-2p-regular - latin */
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 450px;
+        width: 350px;
+        background: #e39e41;
+        border-radius: 5%;
+        padding: 30px;
+        margin: 10px 20px;
+        .display {
+            font-family: 'Press Start 2P';
+            font-size: 28px;
+            background: #86b1a8;
+            line-height: 20px; 
+            height: 30px;
+            border: #7f7024 solid 5px;
+            padding-top: 25px;
+            margin-bottom: 7px;
+            text-align: right;
+        }
+        .keyboard {
+            button {
+                font-family: 'Press Start 2P';
+                font-size: 24px;
+                border: none;
+                height: 60px;
+                border-radius: 20%;
+                cursor: pointer;
+                transition: opacity .2s ease-out;
+            }
+            button:hover {
+                opacity: .7;
+            }
+            .numbers {
+                height: 300px;
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+                grid-gap: 5%;
+                button {
+                    background: #7f7024;
+                    color: gainsboro;
+                }
+            }
+            .operations {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+                grid-gap: 5%;
+                margin-bottom: 10px;
+                button {
+                    background: #d54932;
+                }
+            }
+        }
+        #equal_btn {
+            background: #d54932;
+            border-radius: 40%;
+            color: black;
+        }
+        #clear_btn {
+            background: #d54932;
+            border-radius: 40%;
+            color: black;
+        }
+    }
+}
